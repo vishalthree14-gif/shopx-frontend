@@ -34,7 +34,7 @@ const CartPage = () => {
       setLoading(true);
       setError("");
       try {
-        const res = await fetch(`http://localhost:3000/api/carts/viewCart`, {
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/carts/viewCart`, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const CartPage = () => {
   const handleRemove = async (product_id) => {
 
   try {
-    const res = await fetch(`http://localhost:3000/api/carts/cartRemoveItem/${product_id}`, {
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/carts/cartRemoveItem/${product_id}`, {
       method: "GET", // ✅ backend uses GET, not DELETE
       headers: {
         Authorization: `Bearer ${token}`,
@@ -127,7 +127,7 @@ const handlePlaceOrder = async () => {
   if (paymentMethod === "cod") {
     // Existing COD logic
     try {
-      const res = await fetch("http://localhost:3000/api/orders/addOrder", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/orders/addOrder`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -153,7 +153,7 @@ const handlePlaceOrder = async () => {
   // Razorpay Payment Flow
   try {
     // 1️⃣ Create order from backend
-    const res = await fetch("http://localhost:3000/api/payments/create-order", {
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/payments/create-order`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -173,7 +173,7 @@ const handlePlaceOrder = async () => {
       order_id: data.orderId,
       handler: async function (response) {
         // 3️⃣ Verify payment on backend
-        const verifyRes = await fetch("http://localhost:3000/api/payments/verify-payment", {
+        const verifyRes = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/payments/verify-payment`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(response),
@@ -185,7 +185,7 @@ const handlePlaceOrder = async () => {
           alert("Payment successful! ✅");
 
           // Create order entry in DB
-          await fetch("http://localhost:3000/api/orders/addOrder", {
+          await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/orders/addOrder`, {
             method: "POST",
             headers: {
               Authorization: `Bearer ${token}`,

@@ -32,7 +32,7 @@ const ProductDetails = () => {
       setError("");
       try {
         const res = await fetch(
-          `http://localhost:3000/api/products/getProductId/${productId}`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/products/getProductId/${productId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -73,7 +73,7 @@ const ProductDetails = () => {
 
     setCartMessage("Adding to cart...");
     try {
-      const res = await fetch(`http://localhost:3000/api/carts/addToCart`, {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/carts/addToCart`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

@@ -28,7 +28,7 @@ const EditProfilePage = () => {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:3000/api/users/profile", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/users/profile`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -68,7 +68,7 @@ const EditProfilePage = () => {
     try {
       const token = localStorage.getItem("accessToken");
       const res = await fetch(
-        "http://localhost:3000/api/users/updateUserProfile",
+        `${import.meta.env.VITE_BACKEND_URL}/api/users/updateUserProfile`,
         {
           method: "POST",
           headers: {

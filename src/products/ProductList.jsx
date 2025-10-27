@@ -30,7 +30,7 @@ const ProductsList = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/api/products/getProducts?page=${page}&limit=${limit}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/products/getProducts?page=${page}&limit=${limit}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
+share/
+.env
+
+node_modules/
+

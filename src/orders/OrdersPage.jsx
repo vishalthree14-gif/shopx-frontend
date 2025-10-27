@@ -17,7 +17,7 @@ const OrdersPage = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:3000/api/orders/getOrders", {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/orders/getOrders`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
