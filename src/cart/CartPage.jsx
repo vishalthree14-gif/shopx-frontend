@@ -157,6 +157,8 @@ const handlePlaceOrder = async () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,  // ✅ Include token
+
       },
       body: JSON.stringify({ amount: totalAmount }),
     });
@@ -175,7 +177,11 @@ const handlePlaceOrder = async () => {
         // 3️⃣ Verify payment on backend
         const verifyRes = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/payments/verify-payment`, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+
+          },
           body: JSON.stringify(response),
         });
 

@@ -13,7 +13,7 @@ const OrdersPage = () => {
     fetchOrders();
   }, []);
 
-  // ✅ Fetch orders using your curl API
+  // Fetch orders using your curl API
   const fetchOrders = async () => {
     try {
       setLoading(true);
