@@ -1,0 +1,53 @@
+.profile-container {
+  background-color: #111;          /* darker black for better contrast */
+  color: white;
+  padding:30px 40px;              /* bigger padding */
+  border-radius: 12px;             /* slightly bigger rounded corners */
+  margin: 3rem;               /* centers horizontally */
+  width: 100%;                       /* still 80% width of the screen */
+  max-width: 900px;                /* limit maximum width */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* bigger shadow for depth */
+}
+
+.profile-container p {
+  color: white;
+  margin: 12px 0;
+  font-size: 18px;                 /* bigger font */
+  line-height: 1.6;                /* more spacing between lines */
+}
+
+.image-container img{
+    border-radius: 50px;
+    width: 200px;
+    height: 200px;
+    background-color: aliceblue;
+    margin-bottom: 30px;
+}
+
+.image-container button{
+    background-color: aliceblue;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-container {
+    width: 90%;
+    padding: 25px 30px;
+  }
+
+  .profile-container p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    width: 95%;
+    padding: 20px 20px;
+  }
+
+  .profile-container p {
+    font-size: 14px;
+  }
+}

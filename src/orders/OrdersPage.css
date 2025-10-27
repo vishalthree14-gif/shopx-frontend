@@ -1,0 +1,54 @@
+.orders-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.orders-container h2 {
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.place-order-btn {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.place-order-btn:hover {
+  background: #0056b3;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th,
+.orders-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+.orders-table th {
+  background: #f5f5f5;
+  font-weight: bold;
+}
+
+.empty-message {
+  text-align: center;
+  color: gray;
+  font-style: italic;
+  margin-top: 20px;
+}

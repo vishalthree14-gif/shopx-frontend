@@ -1,0 +1,51 @@
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.cart-table thead {
+  background-color: #f2f2f2;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 14px 18px;
+  border: 1px solid #ddd;
+  text-align: left;
+  color: black;
+}
+
+.cart-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cart-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.cart-table tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: 0.2s;
+}
+
+
+.payment-options label {
+  color: black;
+}
+
+
+.cart-container h2,
+.cart-container h3,
+.cart-container h4,
+.cart-container p,
+.cart-container label,
+.cart-container span {
+  color: black !important;
+}
